@@ -1,13 +1,19 @@
 import './App.css';
-import Header from './Header'
+import Header from './Header';
+import Login from './Login';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div class='h3'>
-      Let's try Amazon clone
-      <Header />
-      {/*Home component*/}
-    </div>
+    <Router>
+      <div className='app'>
+        <Routes>
+          <Route path='/' element={<Header />} /> 
+          <Route path='/login' element={<Login />} />   
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
